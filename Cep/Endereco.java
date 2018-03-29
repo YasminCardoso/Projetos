@@ -11,11 +11,6 @@ class Endereco {
 	private String sigla;
 	private String cep;
 
-	public Long tamanhoLinha() {
-
-		return 300L;
-	}
-
 	public void lerEndereco(DataInput din) throws IOException {
 
 		byte logradouro[] = new byte[72];
