@@ -12,29 +12,29 @@ class Principal {
 		Endereco endereco = new Endereco();
 
 		String cep, aux;
-		long inicio = 0;
-		long meio;
-		long fim = (arq.length() / endereco.tamanhoLinha());
+		long ini = 0;
+		long mei;
+		long fim = (arq.length() / 300)-1;
 		boolean achou = false;
 
 		System.out.print("Digite o CEP: ");
 		cep = sc.nextLine();
 		
 
-		//CÛdigo Busca Bin·ria
+		//C√≥digo Busca Bin√°ria
 
-		while(inicio <= fim) {
+		while(ini <= fim) {
 
-			meio = (inicio + fim)/2;
-			arq.seek(meio * endereco.tamanhoLinha());
+			mei = (ini + fim)/2;
+			arq.seek(mei * 300);
 			endereco.lerEndereco(arq);
 			aux = endereco.getCEP();
 
 			if(aux.compareTo(cep) < 0) {
-				inicio = meio + 1;
+				ini = mei + 1;
 			}
 			else if(aux.compareTo(cep) > 0) {
-				fim = meio - 1;
+				fim = mei - 1;
 			}
 
 			else {
@@ -45,19 +45,19 @@ class Principal {
 
 		}
 
-		if (achou == true) {
-		System.out.println("CEP encontrado!");
-		System.out.println("EndereÁo: ");
-		System.out.println("Logradouro: " + endereco.getLogradouro());
-		System.out.println("Bairro: " + endereco.getBairro());
-		System.out.println("Cidade: " + endereco.getCidade());
-		System.out.println("Estado: " + endereco.getEstado());
-		System.out.println("Sigla: " + endereco.getSigla());
-		System.out.println("CEP: " + endereco.getCEP());
-		arq.close();
+		if (achou) {
+			System.out.println("CEP encontrado!");
+			System.out.println("Endere√ßo: ");
+			System.out.println("Logradouro: " + endereco.getLogradouro());
+			System.out.println("Bairro: " + endereco.getBairro());
+			System.out.println("Cidade: " + endereco.getCidade());
+			System.out.println("Estado: " + endereco.getEstado());
+			System.out.println("Sigla: " + endereco.getSigla());
+			System.out.println("CEP: " + endereco.getCEP());
+			arq.close();
 		}
 		else {
-			System.out.println("CEP n„o encontrado!");
+			System.out.println("CEP n√£o encontrado!");
 		}
 
 	} catch(IOException e) {
