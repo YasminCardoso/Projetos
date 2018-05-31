@@ -11,7 +11,8 @@ Repositório destinado a entrega de trabalhos da disciplina Organização de Est
 <p>6. Se o CEP digitado for encontrado, seu respectivo endereço será mostrado na tela, caso contrário, a mensagem: "CEP não encontrado!" será mostrada;</p>
 <p>7. Se quiser buscar outro CEP, volte ao passo 4.</p>
 
-<p><p>Para executar os programas referentes a prova, siga os seguintes passos:</p></p>
+<br>
+<p>Para executar os programas referentes a prova, siga os seguintes passos:</p>
 
 <p>1. Faça o download do sub repositório Prova; </p>
 <p>2. Execute o Terminal;</p>
